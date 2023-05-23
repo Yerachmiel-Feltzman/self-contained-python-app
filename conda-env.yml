@@ -1,0 +1,12 @@
+name: self_contained_python_app
+channels:
+  - conda-forge
+# adding no dependencies, but 'pip .'
+# this will cause the resolver use the pip resolver for the puproject.toml file in the working directory
+# which is the same we are using for development
+# TODO: for now IDK how to install group dependencies as in Poetry, so pytest is not added for dev
+dependencies:
+  - python=3.11
+  - pip:
+      - .
+
